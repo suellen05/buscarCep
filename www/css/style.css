@@ -1,5 +1,5 @@
 body{
-    background-color:#f1cdc5;
+    background-color:#9b9998;
     background-image: url(../img/self_1.svg);
     background-repeat: no-repeat;
     background-position: left 110%;
@@ -32,16 +32,7 @@ body{
      font-size: 18px;
  }
  
- .lateral{
-   
-    width: 50px;
-     background-color:#3a2d74;
-     /* background-image: url(../img/self.png); */
-     border-top-left-radius: 10rem;
-     border-bottom-left-radius: 10rem;
-     margin-right: -10px;
-     z-index: 10;
- }
+ 
  
  .btn-custom{
      border-radius: 100%;

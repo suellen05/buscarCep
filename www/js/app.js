@@ -1,20 +1,22 @@
-$("#btn").on("click", function(){
-    var numCep = $("#cep").val();
-    var url = "https://viacep.com.br/ws/"+numCep+"/json";
+function BuscarCEP(){
+     let cep = document.getElementById("cep").value
 
-    $.ajax({
-        url: url,
-        type: "get",
-        dataType: "json",
-
-        success:function(dados){
-            console.log(dados);
-            $("#uf").val(dados.uf);
-            $("#cidade").val(dados.localidade);
-            $("#logradouro").val(dados.logradouro);
-            $("#bairro").val(dados.bairro);
-        }
+     $ajax({
+         type: "GET",
+         url: `https://viacep.com.br/ws/${cep}/json/`,
+         success: (function(endereco){
+                 let bairro = endereco.bairro
+                 let rua = endereco.logradouro
+                 let cidade = endereco.localidade
+                 let uf = endereco.uf
+                 document.getElementById("endereco-completo").innerHTML = `Rua/Avenida: 
+                 ${rua} <br> Bairro: ${bairro} <br> cidade: ${cidade} - ${uf}`
+        
+         })
     })
+}     
 
-   
+document.getElementById("pesquisar").addEventListener("click", function(){
+BuscarCEP()
+
 })
